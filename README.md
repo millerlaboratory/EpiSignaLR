@@ -1,6 +1,6 @@
 # EpiSignaLR
 
-A workflow for methylation classification on 35 mendelian conditions. Adapted from: https://github.com/JorisVermeeschLab/NSBEpi/tree/main
+A workflow for methylation classification on 34 mendelian conditions. Adapted from: https://github.com/JorisVermeeschLab/NSBEpi/tree/main
 
 To run, use the EpiSignaLR.sh script which requires a BAM, a sample ID ($PREFIX) and an output directory.
 
