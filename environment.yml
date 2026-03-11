@@ -1,0 +1,22 @@
+name: episignalr_env
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  # Core tools
+  - python>=3.13
+  
+  # Bioinformatics tools
+  - ont-modkit=0.4.4
+  - samtools=1.22
+  - bedtools=2.31.1
+  
+  # Python packages
+  - pandas
+  - numpy
+  - matplotlib
+  - scikit-learn
+  
+  # Development tools
+  - pip

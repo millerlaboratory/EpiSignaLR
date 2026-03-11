@@ -5,6 +5,7 @@ import numpy as np
 import argparse
 import matplotlib.pyplot as plt
 from sklearn import svm
+from pathlib import Path
 
 # Adapted from Geysens et al., 2025 from the Vermeesch Lab
 
@@ -15,7 +16,9 @@ parser.add_argument('--out_prefix', type=str, default='svm_output', help='Prefix
 args = parser.parse_args()
 
 # path to pickle file containing a dictionary with illumina data preprocessed
-file_path = '/n/users/sgibson/Projects/METHYLATION/EpiSignaLR/data/no_strand_all_points_dict.pickle'
+script_dir = Path(__file__).parent
+repo_root = script_dir.parent
+file_path = repo_root / 'data' / 'no_strand_all_points_dict.pickle'
 
 with open(file_path, 'rb') as file:
     epi_signatures_all = pickle.load(file)
