@@ -4,7 +4,7 @@
 
 A workflow for methylation classification on 35 mendelian conditions. Adapted from: https://github.com/JorisVermeeschLab/NSBEpi/tree/main
 
-To run, use the EpiSignaLR.sh script which requires a BAM, a sample ID ($PREFIX), the output directory, and a reference genome. Coordinates are for the hg38 reference genome.
+To run, use the EpiSignaLR.sh script which requires a BAM, a sample ID, the output directory, and a reference genome. Coordinates are for the hg38 reference genome.
 
 This will generate a pileup, filter the pileup to the target CpGs, and then run SVM classifiers for each condition
 
