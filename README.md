@@ -1,5 +1,7 @@
 # EpiSignaLR
 
+*This worklow has been updated to use modkitv.0.6.1 with the `--combine-mods` flag to handle `5hmC` data.*
+
 A workflow for methylation classification on 35 mendelian conditions. Adapted from: https://github.com/JorisVermeeschLab/NSBEpi/tree/main
 
 To run, use the EpiSignaLR.sh script which requires a BAM, a sample ID ($PREFIX), the output directory, and a reference genome. Coordinates are for the hg38 reference genome.
@@ -41,7 +43,7 @@ chmod +x EpiSignaLR.sh
 ```
 
 # Basic Usage
-**EpisignaLR takes a bam file aligned to hg38 and an hg38 reference genome to generate a methylation pileup and then classify based on the mathylation fractions**
+**EpisignaLR takes a bam file aligned to hg38 and an hg38 reference genome to generate a methylation pileup and then classify based on the methylation fractions**
 ```
 bash ./EpiSignaLR.sh <BAM> [SAMPLE NAME] [OUTPUT_DIR] <REF>
 ```
@@ -51,9 +53,12 @@ bash ./EpiSignaLR.sh <BAM> [SAMPLE NAME] [OUTPUT_DIR] <REF>
 The pipeline generates a sample-specific directory containing:
 ```
 <sample_name>/
-├── <sample>_modkit.pileup.bed.gz      # Modkit pileup
-├── <sample>_modkit.episignature.bed   #Subsetted pileup to episignature positions
-├── <sample>_results_score.csv         # The scores for each condition
-├── <sample>_results_top_result.txt    # The top score and associated condition (or control)
-├── <sample>_results_top5_barplot.png   # A barplot of the top 5 scores for the sample
+├── <sample>_modkit.pileup_combined.bed.gz      # Un-phased modkit pileup, used for filtering for classification
+├── <sample>_modkit.episignature.bed            # Subsetted pileup to episignature positions
+├── <sample>_results_score.csv                  # The scores for each condition
+├── <sample>_results_top_result.txt             # The top score and associated condition (or control)
+├── <sample>_results_top5_barplot.png           # A barplot of the top 5 scores for the sample
+├── <sample>_modkit.pileup_hp1.bed.gz           # Phased modkit pileup for hp1, not used
+├── <sample>_modkit.pileup_hp1.bed.gz           # Phased modkit pileup for hp2, not used
+├── <sample>.log                                # Modkit pileup log
 ```
