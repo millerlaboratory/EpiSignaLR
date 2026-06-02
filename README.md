@@ -34,7 +34,7 @@ cd EpiSignaLR
 # Create conda environment
 
 conda env create -f environment.yml
-conda activate episignalr-env
+conda activate episignalr_env
 
 chmod +x EpiSignaLR.sh
 
@@ -43,7 +43,7 @@ chmod +x EpiSignaLR.sh
 # Basic Usage
 **EpisignaLR takes a bam file aligned to hg38 and an hg38 reference genome to generate a methylation pileup and then classify based on the mathylation fractions**
 ```
-bash ./TRoLR.sh <BAM> [SAMPLE NAME] [OUTPUT_DIR] <REF>
+bash ./EpiSignaLR.sh <BAM> [SAMPLE NAME] [OUTPUT_DIR] <REF>
 ```
 
 ## Output
