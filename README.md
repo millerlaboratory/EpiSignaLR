@@ -21,8 +21,6 @@ This will generate a pileup, filter the pileup to the target CpGs, then run:
 
 -Conda or Mamba package manager
 
--R (>= 4.0)
-
 -Python (>= 3.13)
 
 ### Quick Install
