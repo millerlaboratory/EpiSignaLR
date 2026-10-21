@@ -1,0 +1,211 @@
+{
+  "classifier_type": "ElasticNet_selection + linear_SVM",
+  "evaluation": "nested LOOCV (selection + tuning inside each fold)",
+  "loo_performance": {
+    "auc": 1.0,
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "sensitivity": 1.0,
+    "specificity": 1.0,
+    "confusion_matrix": [
+      [
+        10,
+        0
+      ],
+      [
+        0,
+        10
+      ]
+    ],
+    "permutation_p": 0.004975124378109453,
+    "permutation_n": 200
+  },
+  "final_model": {
+    "best_params": {
+      "select__C": 0.05,
+      "select__l1_ratio": 0.3,
+      "svm__C": 0.01
+    },
+    "n_features": 23,
+    "selected_dmrs": [
+      "DMR_15",
+      "DMR_30",
+      "DMR_44",
+      "DMR_46",
+      "DMR_54",
+      "DMR_59",
+      "DMR_61",
+      "DMR_69",
+      "DMR_70",
+      "DMR_78",
+      "DMR_84",
+      "DMR_91",
+      "DMR_98",
+      "DMR_101",
+      "DMR_102",
+      "DMR_104",
+      "DMR_108",
+      "DMR_109",
+      "DMR_110",
+      "DMR_118",
+      "DMR_123",
+      "DMR_141",
+      "DMR_142"
+    ],
+    "svm_weights": {
+      "DMR_15": 0.06142005149698468,
+      "DMR_30": 0.05821482560881425,
+      "DMR_44": 0.04703699843068049,
+      "DMR_46": 0.04519979813736024,
+      "DMR_54": 0.04524849608862486,
+      "DMR_59": 0.05363778499216119,
+      "DMR_61": 0.05400676270160754,
+      "DMR_69": 0.044331594049150436,
+      "DMR_70": 0.04600160997059565,
+      "DMR_78": 0.04777045620884311,
+      "DMR_84": 0.042017697589516234,
+      "DMR_91": 0.05061079798764091,
+      "DMR_98": 0.048677301480602855,
+      "DMR_101": 0.04677172099736088,
+      "DMR_102": 0.04072859163465611,
+      "DMR_104": 0.047902122817136225,
+      "DMR_108": 0.051149649819466445,
+      "DMR_109": 0.05404523101125261,
+      "DMR_110": 0.04966175529387662,
+      "DMR_118": 0.05190169710266315,
+      "DMR_123": 0.06408079851855958,
+      "DMR_141": 0.04725723006548136,
+      "DMR_142": 0.05194948405156633
+    },
+    "train_auc_sanity_only": 1.0
+  },
+  "stability": {
+    "n_bootstrap": 500,
+    "threshold": 0.6,
+    "n_stable_features": 1,
+    "bootstrap_frequency": {
+      "DMR_61": 0.776,
+      "DMR_30": 0.456,
+      "DMR_15": 0.446,
+      "DMR_44": 0.436,
+      "DMR_108": 0.428,
+      "DMR_59": 0.428,
+      "DMR_110": 0.424,
+      "DMR_142": 0.416,
+      "DMR_70": 0.406,
+      "DMR_123": 0.368,
+      "DMR_98": 0.358,
+      "DMR_84": 0.352,
+      "DMR_91": 0.34,
+      "DMR_109": 0.332,
+      "DMR_118": 0.33,
+      "DMR_102": 0.326,
+      "DMR_141": 0.322,
+      "DMR_49": 0.322,
+      "DMR_78": 0.318,
+      "DMR_46": 0.318,
+      "DMR_104": 0.316,
+      "DMR_87": 0.304,
+      "DMR_54": 0.3,
+      "DMR_69": 0.268,
+      "DMR_101": 0.266,
+      "DMR_41": 0.264,
+      "DMR_90": 0.26,
+      "DMR_113": 0.258,
+      "DMR_93": 0.256,
+      "DMR_66": 0.252
+    },
+    "loo_fold_frequency": {
+      "DMR_142": 1.0,
+      "DMR_44": 1.0,
+      "DMR_78": 1.0,
+      "DMR_70": 1.0,
+      "DMR_30": 1.0,
+      "DMR_15": 1.0,
+      "DMR_46": 1.0,
+      "DMR_61": 1.0,
+      "DMR_59": 1.0,
+      "DMR_104": 1.0,
+      "DMR_108": 1.0,
+      "DMR_110": 1.0,
+      "DMR_91": 0.95,
+      "DMR_98": 0.95,
+      "DMR_84": 0.95,
+      "DMR_102": 0.95,
+      "DMR_118": 0.95,
+      "DMR_123": 0.9,
+      "DMR_69": 0.85,
+      "DMR_101": 0.7,
+      "DMR_54": 0.7,
+      "DMR_141": 0.45,
+      "DMR_132": 0.3,
+      "DMR_87": 0.25,
+      "DMR_62": 0.15,
+      "DMR_13": 0.15,
+      "DMR_4": 0.15,
+      "DMR_109": 0.15,
+      "DMR_79": 0.1,
+      "DMR_66": 0.1
+    }
+  },
+  "grids": {
+    "enet_C": [
+      0.05,
+      0.1,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "enet_l1_ratio": [
+      0.3,
+      0.5,
+      0.7,
+      0.9
+    ],
+    "enet_min_features": 5,
+    "enet_max_features": 23,
+    "svm_C": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "inner_cv_folds": 5
+  },
+  "scoring": {
+    "threshold": 0.5,
+    "indeterminate_zone": [
+      0.4,
+      0.6
+    ]
+  },
+  "training_cohort": {
+    "n_samples": 20,
+    "n_cases": 10,
+    "n_controls": 10,
+    "sample_ids": [
+      "1_1",
+      "1_2",
+      "1_3",
+      "1_4",
+      "1_5",
+      "1_6",
+      "1_7",
+      "1_8",
+      "1_9",
+      "1_10",
+      "0_1",
+      "0_2",
+      "0_3",
+      "0_4",
+      "0_5",
+      "0_6",
+      "0_7",
+      "0_8",
+      "0_9",
+      "0_10"
+    ]
+  },
+  "held_out_results": null,
+  "note": "Report loo_performance as the generalization estimate. train_auc_sanity_only is NOT a performance estimate. Feature selection, scaling and tuning are refit inside every LOO fold, so there is no selection leakage."
+}

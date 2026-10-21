@@ -13,6 +13,8 @@ from pathlib import Path
 parser = argparse.ArgumentParser(description="Run SVM classifier on a single BED file sample.")
 parser.add_argument('--bed', type=str, required=True, help='Path to the single BED file')
 parser.add_argument('--out_prefix', type=str, default='svm_output', help='Prefix for output files')
+parser.add_argument('--sample', type=str, default=None,
+                    help='Sample name to report in results (default: BED filename without .bed)')
 args = parser.parse_args()
 
 # path to pickle file containing a dictionary with illumina data preprocessed
@@ -50,7 +52,7 @@ epi_signatures_all_with_sample = epi_signatures_all.copy()
 epi_signatures_all_with_sample['MRXCJS'] = epi_signatures_all_with_sample['MRXSCJ']
 del epi_signatures_all_with_sample['MRXSCJ']
 
-sample_name = os.path.basename(bed_file_path).replace('.bed', '')
+sample_name = args.sample or os.path.basename(bed_file_path).replace('.bed', '')
 print("Matching disorders from sample to reference disorder signatures:")
 for disorder in epi_signatures_all_with_sample:
     epi_signatures_all_with_sample[disorder] = epi_signatures_all_with_sample[disorder].iloc[:, 2:-1]

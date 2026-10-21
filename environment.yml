@@ -1,4 +1,6 @@
-name: episignalr_env
+name: episignalr_env_v1.0
+
+# add pb-cpg-tools
 channels:
   - conda-forge
   - bioconda
@@ -11,12 +13,14 @@ dependencies:
   - ont-modkit=0.6.1
   - samtools=1.22
   - bedtools=2.31.1
+  - pb-cpg-tools
   
   # Python packages
   - pandas
   - numpy
   - matplotlib
-  - scikit-learn
+  - seaborn
+  - scikit-learn=1.8.0
   
   # Development tools
   - pip

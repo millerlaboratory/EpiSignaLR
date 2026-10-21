@@ -1,0 +1,170 @@
+{
+  "classifier_type": "ElasticNet_selection + linear_SVM",
+  "evaluation": "nested LOOCV (selection + tuning inside each fold)",
+  "loo_performance": {
+    "auc": 1.0,
+    "accuracy": 0.7368421052631579,
+    "balanced_accuracy": 0.75,
+    "sensitivity": 1.0,
+    "specificity": 0.5,
+    "confusion_matrix": [
+      [
+        5,
+        5
+      ],
+      [
+        0,
+        9
+      ]
+    ],
+    "permutation_p": 0.004975124378109453,
+    "permutation_n": 200
+  },
+  "final_model": {
+    "best_params": {
+      "select__C": 0.05,
+      "select__l1_ratio": 0.3,
+      "svm__C": 0.01
+    },
+    "n_features": 13,
+    "selected_dmrs": [
+      "DMR_1",
+      "DMR_3",
+      "DMR_5",
+      "DMR_6",
+      "DMR_8",
+      "DMR_9",
+      "DMR_10",
+      "DMR_12",
+      "DMR_13",
+      "DMR_14",
+      "DMR_15",
+      "DMR_18",
+      "DMR_20"
+    ],
+    "svm_weights": {
+      "DMR_1": -0.0949744975075283,
+      "DMR_3": -0.06501164439530885,
+      "DMR_5": 0.06985334640941003,
+      "DMR_6": -0.07339294088242464,
+      "DMR_8": -0.08537356459749022,
+      "DMR_9": -0.08256396693666435,
+      "DMR_10": 0.10077539861961024,
+      "DMR_12": -0.0907485602898442,
+      "DMR_13": -0.08845741812987136,
+      "DMR_14": -0.09750766951742366,
+      "DMR_15": -0.08366724392320604,
+      "DMR_18": -0.08978134719197717,
+      "DMR_20": 0.06797901091146341
+    },
+    "train_auc_sanity_only": 1.0
+  },
+  "stability": {
+    "n_bootstrap": 500,
+    "threshold": 0.6,
+    "n_stable_features": 11,
+    "bootstrap_frequency": {
+      "DMR_10": 0.908,
+      "DMR_1": 0.866,
+      "DMR_8": 0.842,
+      "DMR_14": 0.832,
+      "DMR_18": 0.814,
+      "DMR_9": 0.812,
+      "DMR_13": 0.786,
+      "DMR_6": 0.774,
+      "DMR_12": 0.754,
+      "DMR_15": 0.748,
+      "DMR_20": 0.654,
+      "DMR_3": 0.528,
+      "DMR_5": 0.526,
+      "DMR_11": 0.508,
+      "DMR_7": 0.412,
+      "DMR_16": 0.406,
+      "DMR_17": 0.342,
+      "DMR_2": 0.308,
+      "DMR_4": 0.272,
+      "DMR_19": 0.2
+    },
+    "loo_fold_frequency": {
+      "DMR_20": 1.0,
+      "DMR_18": 1.0,
+      "DMR_14": 0.7368421052631579,
+      "DMR_13": 0.7368421052631579,
+      "DMR_6": 0.7368421052631579,
+      "DMR_1": 0.7368421052631579,
+      "DMR_10": 0.7368421052631579,
+      "DMR_9": 0.7368421052631579,
+      "DMR_8": 0.7368421052631579,
+      "DMR_12": 0.6842105263157895,
+      "DMR_15": 0.47368421052631576,
+      "DMR_17": 0.3157894736842105,
+      "DMR_19": 0.2631578947368421,
+      "DMR_16": 0.2631578947368421,
+      "DMR_3": 0.2631578947368421,
+      "DMR_5": 0.21052631578947367,
+      "DMR_11": 0.05263157894736842,
+      "DMR_7": 0.05263157894736842,
+      "DMR_4": 0.05263157894736842,
+      "DMR_2": 0.0
+    }
+  },
+  "grids": {
+    "enet_C": [
+      0.05,
+      0.1,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "enet_l1_ratio": [
+      0.3,
+      0.5,
+      0.7,
+      0.9
+    ],
+    "enet_min_features": 5,
+    "enet_max_features": 23,
+    "svm_C": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "inner_cv_folds": 5
+  },
+  "scoring": {
+    "threshold": 0.5,
+    "indeterminate_zone": [
+      0.4,
+      0.6
+    ]
+  },
+  "training_cohort": {
+    "n_samples": 19,
+    "n_cases": 9,
+    "n_controls": 10,
+    "sample_ids": [
+      "1_1",
+      "1_2",
+      "1_3",
+      "1_4",
+      "1_5",
+      "1_6",
+      "1_7",
+      "1_8",
+      "1_9",
+      "0_1",
+      "0_2",
+      "0_3",
+      "0_4",
+      "0_5",
+      "0_6",
+      "0_7",
+      "0_8",
+      "0_9",
+      "0_10"
+    ]
+  },
+  "held_out_results": null,
+  "note": "Report loo_performance as the generalization estimate. train_auc_sanity_only is NOT a performance estimate. Feature selection, scaling and tuning are refit inside every LOO fold, so there is no selection leakage."
+}
