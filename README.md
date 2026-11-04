@@ -37,7 +37,7 @@ cd EpiSignaLR
 # Create conda environment
 
 conda env create -f environment.yml
-conda activate episignalr_env
+conda activate episignalr_env_v1.0
 
 chmod +x EpiSignaLR.sh
 
