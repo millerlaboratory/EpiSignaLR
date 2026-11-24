@@ -81,13 +81,15 @@ for disorder in epi_signatures_all_with_sample:
         else:
             new_y = [1 if item == 'MRXSCJ' else 0 for item in y]
 
-        X = X.replace('NA', np.nan)
-        X = X.astype(float)
-        X = X.fillna(X.mean())
+        X = X.replace('NA', np.nan).astype(float)
 
         X_train = X.iloc[:-n_of_samples, :]
         X_test = X.iloc[-n_of_samples:, :]
 
+        training_means = X_train.mean()
+        X_train = X_train.fillna(training_means)
+        X_test = X_test.fillna(training_means)
+        
         y_train = new_y[:-n_of_samples]
         y_test = new_y[-n_of_samples:]
 
